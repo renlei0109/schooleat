@@ -2,6 +2,11 @@ package cn.com.school.eat.code.entity;
 
 import java.util.Set;
 
+/**
+ * @author renlei 
+ * @E-mail:renlei0109@yeah.net
+ * @version 创建时间：2014-5-28 下午11:28:19 简单说明
+ */
 public class User {
 
 	private String user_id;
