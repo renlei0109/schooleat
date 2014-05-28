@@ -2,6 +2,7 @@ package cn.com.school.eat.code.entity;
 
 public class Tag_Owner {
 
+	
 	private String tag_mark;
 	private String owner_id;
 
