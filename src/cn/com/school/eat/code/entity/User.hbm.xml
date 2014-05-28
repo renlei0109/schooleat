@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-5-27 23:21:46 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.com.school.eat.code.entity.User" table="USER">
+        <id name="user_id" type="java.lang.String">
+            <column name="USER_ID" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="user_name" type="java.lang.String">
+            <column name="USER_NAME" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="mobile" type="java.lang.String">
+            <column name="MOBILE" />
+        </property>
+        <property name="img_url" type="java.lang.String">
+            <column name="IMG_URL" />
+        </property>
+        <property name="binding" type="java.lang.String">
+            <column name="BINDING" />
+        </property>
+    </class>
+</hibernate-mapping>
