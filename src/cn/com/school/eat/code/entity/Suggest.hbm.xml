@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-5-28 23:02:45 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.com.school.eat.code.entity.Suggest" table="SUGGEST">
+        <id name="user_id" type="java.lang.String">
+            <column name="USER_ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="advice_id" type="java.lang.String">
+            <column name="ADVICE_ID" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="CONTENT" />
+        </property>
+        <property name="result" type="java.lang.String">
+            <column name="RESULT" />
+        </property>
+    </class>
+</hibernate-mapping>

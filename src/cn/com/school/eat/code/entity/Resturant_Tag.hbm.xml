@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-5-28 23:02:45 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.com.school.eat.code.entity.Resturant_Tag" table="RESTURANT_TAG">
+        <id name="tag_mark" type="java.lang.String">
+            <column name="TAG_MARK" />
+            <generator class="uuid" />
+        </id>
+        <property name="tag_name" type="java.lang.String">
+            <column name="TAG_NAME" />
+        </property>
+        <set name="tag_Owners" table="TAG_OWNER" inverse="false" lazy="true" cascade="all">
+            <key>
+                <column name="TAG_MARK" />
+            </key>
+            <one-to-many class="cn.com.school.eat.code.entity.Tag_Owner" />
+        </set>
+    </class>
+</hibernate-mapping>

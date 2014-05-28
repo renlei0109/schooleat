@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-5-28 23:02:45 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="cn.com.school.eat.code.entity.Order" table="ORDER">
+		<id name="order_id" type="java.lang.String">
+			<column name="ORDER_ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="order_time" type="java.util.Date">
+			<column name="ORDER_TIME" />
+		</property>
+		<property name="user_id" type="java.lang.String">
+			<column name="USER_ID" />
+		</property>
+		<property name="total_price" type="double">
+			<column name="TOTAL_PRICE" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="STATUS" />
+		</property>
+		<set name="order_Dishs" table="ORDER_DISH" inverse="false" lazy="true"
+			cascade="all">
+			<key>
+				<column name="ORDER_ID" />
+			</key>
+			<one-to-many class="cn.com.school.eat.code.entity.Order_Dish" />
+		</set>
+	</class>
+</hibernate-mapping>

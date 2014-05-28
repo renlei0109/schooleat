@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-5-28 23:02:45 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.com.school.eat.code.entity.Address" table="ADDRESS">
+        <id name="address_id" type="java.lang.String">
+            <column name="ADDRESS_ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="owner_id" type="java.lang.String">
+            <column name="OWNER_ID" />
+        </property>
+        <property name="province" type="java.lang.String">
+            <column name="PROVINCE" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="CITY" />
+        </property>
+        <property name="zone" type="java.lang.String">
+            <column name="ZONE" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="mobile" type="java.lang.String">
+            <column name="MOBILE" />
+        </property>
+    </class>
+</hibernate-mapping>
