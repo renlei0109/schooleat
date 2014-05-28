@@ -23,6 +23,30 @@
 				<param name="root">responseJson</param>
 			</result>
         </action>
+        
+        <action name="QueryOrderAction" class="orderAction" method="QueryOrderAction">
+              <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="MakeOrderAction" class="orderAction" method="MakeOrderAction">
+              <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="SurplusAction" class="orderAction" method="SurplusAction">
+              <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="MakeSureAction" class="orderAction" method="MakeSureAction">
+              <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
     </package>
           
 </struts> 

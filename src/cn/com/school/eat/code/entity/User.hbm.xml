@@ -36,11 +36,6 @@
 			</key>
 			<one-to-many class="cn.com.school.eat.code.entity.Collection" />
 		</set>
-		<set name="orders" table="ORDER" inverse="false" lazy="true">
-			<key>
-				<column name="USER_ID" />
-			</key>
-			<one-to-many class="cn.com.school.eat.code.entity.Order" />
-		</set>
+	
 	</class>
 </hibernate-mapping>

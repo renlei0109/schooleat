@@ -11,6 +11,9 @@
 		<property name="order_time" type="java.util.Date">
 			<column name="ORDER_TIME" />
 		</property>
+		<property name="resturant_id" type="java.lang.String">
+		    <column name="resturant_id"></column>
+		</property>
 		<property name="user_id" type="java.lang.String">
 			<column name="USER_ID" />
 		</property>

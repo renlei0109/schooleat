@@ -10,11 +10,19 @@ public class Order {
 	private String user_id;
 	private double total_price;
 	private String status;
-
+	private String resturant_id;
 	private Set<Order_Dish> order_Dishs;
 
 	public Order() {
 
+	}
+	
+	public String getResturant_id() {
+		return resturant_id;
+	}
+
+	public void setResturant_id(String resturant_id) {
+		this.resturant_id = resturant_id;
 	}
 
 	public String getOrder_id() {

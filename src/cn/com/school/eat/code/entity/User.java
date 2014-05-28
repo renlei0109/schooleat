@@ -19,7 +19,7 @@ public class User {
 	private Set<Address> addresses;
 	private Set<Collection> collections;
 
-	private Set<Order> orders;
+
 
 	public User() {
 
@@ -89,12 +89,6 @@ public class User {
 		this.collections = collections;
 	}
 
-	public Set<Order> getOrders() {
-		return orders;
-	}
 
-	public void setOrders(Set<Order> orders) {
-		this.orders = orders;
-	}
 
 }
