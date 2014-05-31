@@ -16,9 +16,18 @@ public class Resturant {
 	private String img_url;
 	private String isfree;
 	private Set<Dish> dishs;
-
+	private double total_sell;
+	
 	public Resturant() {
 
+	}
+
+	public double getTotal_sell() {
+		return total_sell;
+	}
+
+	public void setTotal_sell(double total_sell) {
+		this.total_sell = total_sell;
 	}
 
 	public String getResturant_id() {
