@@ -38,8 +38,8 @@
         <property name="img_url" type="java.lang.String">
             <column name="IMG_URL" />
         </property>
-        <property name="isfree" type="java.lang.String">
-            <column name="ISFREE" />
+        <property name="total_money" type="double">
+            <column name="total_money" />
         </property>
         <set name="dishs" table="DISH" inverse="false" lazy="true" cascade="all">
             <key>

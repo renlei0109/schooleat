@@ -14,12 +14,21 @@ public class Resturant {
 	private String y;
 	private String type;
 	private String img_url;
-	private String isfree;
+	//private String isfree;
 	private Set<Dish> dishs;
 	private double total_sell;
+	private double total_money;
 	
 	public Resturant() {
 
+	}
+
+	public double getTotal_money() {
+		return total_money;
+	}
+
+	public void setTotal_money(double total_money) {
+		this.total_money = total_money;
 	}
 
 	public double getTotal_sell() {
@@ -110,13 +119,7 @@ public class Resturant {
 		this.img_url = img_url;
 	}
 
-	public String getIsfree() {
-		return isfree;
-	}
 
-	public void setIsfree(String isfree) {
-		this.isfree = isfree;
-	}
 
 	public Set<Dish> getDishs() {
 		return dishs;

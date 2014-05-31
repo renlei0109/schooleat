@@ -3,6 +3,8 @@ package cn.com.school.eat.code.util.resturant;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import cn.com.school.eat.code.entity.Resturant;
 
 /**
@@ -11,6 +13,7 @@ import cn.com.school.eat.code.entity.Resturant;
  * @version 创建时间：2014-5-31 下午2:06:41 简单说明
  * 根据经纬度查找餐厅的接口
  */
+
 public interface FindResturant{
 	/**
 	 * 根据经纬度计算离该商家一定范围内的商家

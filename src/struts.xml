@@ -133,6 +133,32 @@
 				<param name="root">responseJson</param>
 			</result>
         </action>
+        
+        
+        <action name="GetResturantByNormalAction" class="resturantAction" method="getResturantByNormal">
+              <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+         <action name="GetResturantByMonthSellAction" class="resturantAction" method="getResturantByMonthSell">
+              <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="GetResturantByMoney" class="resturantAction" method="getResturantByMoney">
+              <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="GetResturantByDistance" class="resturantAction" method="getResturantByDistance">
+              <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
     </package>
           
 </struts> 
