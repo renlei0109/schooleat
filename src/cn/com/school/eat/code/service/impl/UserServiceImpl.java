@@ -1,4 +1,6 @@
 package cn.com.school.eat.code.service.impl;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -38,5 +40,40 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		userDao.addNewUser(mobile, password);
 	}
-      
+
+	@Override
+	public boolean cancleColl(String user_id, String id, String type) {
+		// TODO Auto-generated method stub
+		return userDao.cancleCollect(user_id, id, type);
+	}
+
+	@Override
+	public boolean addColl(String user_id, String id, String type) {
+		// TODO Auto-generated method stub
+		return userDao.addCollect(user_id, id, type);
+	}
+
+	@Override
+	public List<Object> getDishesCollection(String user_id) {
+		// TODO Auto-generated method stub
+		return userDao.showDishedCollection(user_id);
+	}
+
+	@Override
+	public List<Object> getResturantCollection(String user_id) {
+		// TODO Auto-generated method stub
+		return userDao.showResturantCollection(user_id);
+	}
+
+	@Override
+	public boolean dishBinding(String user_id, String dish_id) {
+		// TODO Auto-generated method stub
+		return userDao.dishBinding(user_id, dish_id);
+	}
+
+	@Override
+	public void changePassword(String user_id, String oldpassword, String newpassword) {
+		// TODO Auto-generated method stub
+		userDao.changePassword(user_id, oldpassword, newpassword);
+	}  
 }

@@ -32,6 +32,9 @@
         <property name="type" type="java.lang.String">
             <column name="TYPE" />
         </property>
+        <property name="total_sell" type="double" >
+            <column name="total_sell"></column>
+        </property>
         <property name="img_url" type="java.lang.String">
             <column name="IMG_URL" />
         </property>
