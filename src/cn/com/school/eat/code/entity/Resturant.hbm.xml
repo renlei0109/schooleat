@@ -23,10 +23,10 @@
         <property name="delivery_time" type="int">
             <column name="DELIVERY_TIME" />
         </property>
-        <property name="x" type="java.lang.String">
+        <property name="x" type="double">
             <column name="X" />
         </property>
-        <property name="y" type="java.lang.String">
+        <property name="y" type="double">
             <column name="Y" />
         </property>
         <property name="type" type="java.lang.String">

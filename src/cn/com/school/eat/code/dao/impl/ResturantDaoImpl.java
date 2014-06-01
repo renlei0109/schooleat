@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
 import cn.com.school.eat.code.dao.ResturantDao;
@@ -21,6 +22,16 @@ import cn.com.school.eat.code.util.resturant.FindResturantFatory;
  */
 @Component("resturantDao")
 public class ResturantDaoImpl implements ResturantDao{
+	private HibernateTemplate  hibernateTemplate;
+	
+	public HibernateTemplate getHibernateTemplate() {
+		return hibernateTemplate;
+	}
+	@Resource
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
+	}
+
 	private FindResturantFatory findResturantFatory;
 	private List<Resturant>resturants = null;
 	public FindResturantFatory getFindResturantFatory() {
@@ -37,6 +48,21 @@ public class ResturantDaoImpl implements ResturantDao{
 	@Override
 	public List<Resturant> findResturantByNormal(double longitude,
 			double latitude) {
+		//resturants = findResturantFatory.createFinResByNormal().findResturants(longitude, latitude);
+		System.out.println(longitude+"&^&*&*"+latitude);
+		String hql = "from Resturant r where sqrt(" +
+				"((("+longitude+"-r.x)*PI()*12656*cos((("+latitude+"+r.y)/2)*PI()/180)/180) " +
+				"  *  " +
+				"(("+longitude+"-r.x)*PI()*12656*cos ((("+latitude+"+r.y)/2)*PI()/180)/180)  " +
+				")  " +
+				"+  " +
+				"(  " +
+				"(( "+latitude+" -r.y)*PI()*12656/180)  " +
+				" *  " +
+				"(("+latitude+"-r.y)*PI()*12656/180)  " +
+				")  " +
+				")<2 ";
+		//resturants = hibernateTemplate.find(hql);
 		resturants = findResturantFatory.createFinResByNormal().findResturants(longitude, latitude);
 		if(null!=resturants)
 			return resturants;

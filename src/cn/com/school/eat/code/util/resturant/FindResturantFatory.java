@@ -3,6 +3,8 @@
  */
 package cn.com.school.eat.code.util.resturant;
 
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,26 +19,61 @@ public class FindResturantFatory {
 	 * @return
 	 * 通过距离寻找餐馆
 	 */
-	public static FindResturant createFinResByDis(){
-		return new FindResturantByDistance();
+	private  FindResutrantByNormal findResutrantByNormal;
+	private  FindResturantByMoney findResturantByMoney;
+	private  FindResturantByMonthSell findResturantByMonthSell;
+	private  FindResturantByDistance findResturantByDistance;
+	
+	public FindResturantByMoney getFindResturantByMoney() {
+		return findResturantByMoney;
+	}
+	@Resource
+	public void setFindResturantByMoney(FindResturantByMoney findResturantByMoney) {
+		this.findResturantByMoney = findResturantByMoney;
+	}
+	public FindResturantByMonthSell getFindResturantByMonthSell() {
+		return findResturantByMonthSell;
+	}
+	@Resource
+	public void setFindResturantByMonthSell(
+			FindResturantByMonthSell findResturantByMonthSell) {
+		this.findResturantByMonthSell = findResturantByMonthSell;
+	}
+	public FindResturantByDistance getFindResturantByDistance() {
+		return findResturantByDistance;
+	}
+	@Resource
+	public void setFindResturantByDistance(
+			FindResturantByDistance findResturantByDistance) {
+		this.findResturantByDistance = findResturantByDistance;
+	}
+	public FindResutrantByNormal getFindResutrantByNormal() {
+		return findResutrantByNormal;
+	}
+	@Resource
+	public void setFindResutrantByNormal(FindResutrantByNormal findResutrantByNormal) {
+		this.findResutrantByNormal = findResutrantByNormal;
+	}
+	public  FindResturant createFinResByDis(){
+		return findResturantByDistance;
 	}
 	/**
 	 * 
 	 * @return
 	 * 通过月销量寻找餐馆
 	 */
-	public static FindResturant createFinResByMonSell(){
-		return new FindResturantByMonthSell();
+	public  FindResturant createFinResByMonSell(){
+		return  findResturantByMonthSell;
 	}
 	/**
 	 * @return
 	 * 正常情况下寻找餐馆
 	 */
-	public static FindResturant createFinResByNormal(){
-		return new FindResutrantByNormal();
+	public  FindResturant createFinResByNormal(){
+		return findResutrantByNormal;
 	}
 	
-	public static FindResturant createFinResByMoney(){
-		return new FindResturantByMoney();
+	public  FindResturant createFinResByMoney(){
+		return findResturantByMoney;
 	}
 }

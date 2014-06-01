@@ -2,6 +2,7 @@
  * 
  */
 package cn.com.school.eat.code.web.action;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +27,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ResturantAction extends ActionSupport{
 	
 	public String getResturantByNormal(){
+		
+		System.out.println("*******"+longitude+"****"+latitude+"*****");
 		resturants = resturantService.getResturantByNormal(longitude, latitude);
+		System.out.println(resturants.get(0).toString()+"&&&&&&&&&&&&&&&&&&&&&&&");
+		responseJson = new HashMap<String, Object>();
 		if(resturants!=null){
 			responseJson.put("result", gson.toJson(resturants));
 			return SUCCESS;

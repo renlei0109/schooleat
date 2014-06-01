@@ -4,14 +4,25 @@ import java.util.Set;
 
 public class Resturant {
 
+	@Override
+	public String toString() {
+		return "Resturant [resturant_id=" + resturant_id + ", resturant_name="
+				+ resturant_name + ", mobile=" + mobile + ", delivery="
+				+ delivery + ", delivery_limit=" + delivery_limit
+				+ ", delivery_time=" + delivery_time + ", x=" + x + ", y=" + y
+				+ ", type=" + type + ", img_url=" + img_url + ", dishs="
+				+ dishs + ", total_sell=" + total_sell + ", total_money="
+				+ total_money + "]";
+	}
+
 	private String resturant_id;
 	private String resturant_name;
 	private String mobile;
 	private String delivery;
 	private String delivery_limit;
 	private int delivery_time;
-	private String x;
-	private String y;
+	private double x;
+	private double y;
 	private String type;
 	private String img_url;
 	//private String isfree;
@@ -87,19 +98,21 @@ public class Resturant {
 		this.delivery_time = delivery_time;
 	}
 
-	public String getX() {
+
+
+	public double getX() {
 		return x;
 	}
 
-	public void setX(String x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 
-	public String getY() {
+	public double getY() {
 		return y;
 	}
 
-	public void setY(String y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 
