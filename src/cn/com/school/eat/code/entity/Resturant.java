@@ -29,7 +29,18 @@ public class Resturant {
 	private Set<Dish> dishs;
 	private double total_sell;
 	private double total_money;
+	private double beginmoney;
 	
+
+
+	public double getBeginmoney() {
+		return beginmoney;
+	}
+
+	public void setBeginmoney(double beginmoney) {
+		this.beginmoney = beginmoney;
+	}
+
 	public Resturant() {
 
 	}

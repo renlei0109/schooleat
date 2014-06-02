@@ -23,7 +23,7 @@ public class FindResturantFatory {
 	private  FindResturantByMoney findResturantByMoney;
 	private  FindResturantByMonthSell findResturantByMonthSell;
 	private  FindResturantByDistance findResturantByDistance;
-	
+	private  FindResturantByBeginMoney findResturantByBeginMoney;
 	public FindResturantByMoney getFindResturantByMoney() {
 		return findResturantByMoney;
 	}
@@ -57,6 +57,17 @@ public class FindResturantFatory {
 	public  FindResturant createFinResByDis(){
 		return findResturantByDistance;
 	}
+	
+	
+	
+	public FindResturantByBeginMoney getFindResturantByBeginMoney() {
+		return findResturantByBeginMoney;
+	}
+	@Resource
+	public void setFindResturantByBeginMoney(
+			FindResturantByBeginMoney findResturantByBeginMoney) {
+		this.findResturantByBeginMoney = findResturantByBeginMoney;
+	}
 	/**
 	 * 
 	 * @return
@@ -75,5 +86,9 @@ public class FindResturantFatory {
 	
 	public  FindResturant createFinResByMoney(){
 		return findResturantByMoney;
+	}
+	
+	public FindResturant createFinResByBeginMoney(){
+		return findResturantByBeginMoney;
 	}
 }

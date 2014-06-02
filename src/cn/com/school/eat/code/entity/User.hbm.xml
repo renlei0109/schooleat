@@ -6,7 +6,7 @@
 	<class name="cn.com.school.eat.code.entity.User" table="USER">
 		<id name="user_id" type="java.lang.String">
 			<column name="USER_ID" />
-			<generator class="assigned" />
+			<generator class="uuid" />
 		</id>
 		<property name="user_name" type="java.lang.String">
 			<column name="USER_NAME" />

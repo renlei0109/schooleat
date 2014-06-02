@@ -158,7 +158,7 @@
 				<param name="root">responseJson</param>
 			</result>
         </action>
-        
+       
     </package>
           
 </struts> 

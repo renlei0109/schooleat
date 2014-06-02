@@ -35,6 +35,9 @@
         <property name="total_sell" type="double" >
             <column name="total_sell"></column>
         </property>
+        <property name="beginmoney" type="double">
+            <column name ="beginmoney"></column>
+        </property>
         <property name="img_url" type="java.lang.String">
             <column name="IMG_URL" />
         </property>

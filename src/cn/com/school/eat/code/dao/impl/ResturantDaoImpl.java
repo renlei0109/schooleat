@@ -104,6 +104,17 @@ public class ResturantDaoImpl implements ResturantDao{
 			return resturants;
 		return null;
 	}
+	/* (non-Javadoc)
+	 * @see cn.com.school.eat.code.dao.ResturantDao#findResturantByBeginMoney(double, double)
+	 */
+	@Override
+	public List<Resturant> findResturantByBeginMoney(double longitude,
+			double latitude) {
+		resturants = findResturantFatory.createFinResByBeginMoney().findResturants(longitude, latitude);
+			if(null!=resturants)
+				return resturants;
+		return null;
+	}
 
 
 

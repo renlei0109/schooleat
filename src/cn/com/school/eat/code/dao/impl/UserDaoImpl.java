@@ -3,6 +3,7 @@ package cn.com.school.eat.code.dao.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -48,13 +49,15 @@ public class UserDaoImpl implements UserDao{
 			return false;
 	}
 	
+	
 	@Override
-	public void addNewUser(String mobile, String password) {
+	@Scope("REQUIRED")
+	public void addNewUser(String mobile) {
 		// TODO Auto-generated method stub
 		User user = new User();
 		user.setMobile(mobile);
-		user.setPassword(password);
-		hibernateTemplate.save("User", user);
+		//user.setPassword(password);
+		hibernateTemplate.save(user);
 		hibernateTemplate.flush();
 	}
 	

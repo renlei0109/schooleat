@@ -86,7 +86,7 @@ public class OrderAction extends BaseAction{
 	 * 成功返回一个list
 	 * 失败返回"failed"
 	 */
-	private String QueryOrderAction(){
+	public String QueryOrderAction(){
 		
 		 List<Order> orders;
 		 responsejson = new HashMap<String, Object>();
@@ -111,7 +111,7 @@ public class OrderAction extends BaseAction{
 	 * 成功返回一个list
 	 * 失败返回"failed"
 	 */
-	private String MakeOrderAction(){
+	public String MakeOrderAction(){
 		
 		 List<Address> addresses;
 		 responsejson = new HashMap<String, Object>();
@@ -138,7 +138,7 @@ public class OrderAction extends BaseAction{
 	 * 失败返回"failed"
 	 */
 	
-	private String SurplusAction(){
+	public String SurplusAction(){
 		
 		 responsejson = new HashMap<String, Object>();
 		try {
@@ -168,7 +168,7 @@ public class OrderAction extends BaseAction{
 	 * 失败返回"failed"
 	 */
 	
-	private String MakeSureAction(){
+	public String MakeSureAction(){
 		
 		 responsejson = new HashMap<String, Object>();
 		try {

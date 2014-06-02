@@ -10,7 +10,7 @@ public interface UserDao {
 
 	public boolean hasMobile(String mobile);
 
-	public void addNewUser(String mobile, String password);
+	public void addNewUser(String mobile);
 
 	public boolean cancleCollect(String user_id, String id, String type);
 

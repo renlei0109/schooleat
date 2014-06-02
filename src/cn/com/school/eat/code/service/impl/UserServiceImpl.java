@@ -2,6 +2,7 @@ package cn.com.school.eat.code.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cn.com.school.eat.code.dao.UserDao;
@@ -36,9 +37,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void register(String mobile, String password) {
+	@Scope("REQUIRED")
+	public void register(String mobile) {
 		// TODO Auto-generated method stub
-		userDao.addNewUser(mobile, password);
+		userDao.addNewUser(mobile);
 	}
 
 	@Override

@@ -17,5 +17,6 @@ public interface ResturantDao {
 	public List<Resturant>findResturantByMonthSell(double longitude,double latitude);
 	public List<Resturant>findResturantByMoney(double longitude,double latitude);
 	public List<Resturant>findResturantByDistance(double longitude,double latitude);
+	public List<Resturant>findResturantByBeginMoney(double longitude,double latitude);
 	
 }

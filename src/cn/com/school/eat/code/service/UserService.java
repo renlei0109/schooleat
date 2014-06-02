@@ -11,7 +11,7 @@ public interface UserService {
 
 	public boolean isMobileExist(String mobile);
 
-	public void register(String mobile, String password);
+	public void register(String mobile);
 
 	public boolean cancleColl(String user_id, String id, String type);
 

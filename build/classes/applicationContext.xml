@@ -81,10 +81,17 @@
   
     <tx:advice id="txAdvice" transaction-manager="txManager">  
         <tx:attributes>  
-            <tx:method name="*" />    
-            <tx:method name="add*" propagation="REQUIRED"/>  
+            <tx:method name="*" />
+            <tx:method name="save*" propagation="REQUIRED"/>    
+           <!--  <tx:method name="add*" propagation="REQUIRED"/>   -->
             <tx:method name="del*" propagation="REQUIRED"/>  
-            <tx:method name="edit*" propagation="REQUIRED"/>  
+            <tx:method name="edit*" propagation="REQUIRED"/> 
+            <tx:method name="get*" read-only="false" propagation="NOT_SUPPORTED"/>
+            <tx:method name="add*" read-only="false" propagation="NOT_SUPPORTED"/>
+   			<tx:method name="find*" read-only="false" propagation="NOT_SUPPORTED"/>
+  			<tx:method name="save*" propagation="REQUIRED"/><!--  // 如果不把save update delete都配置上， -->
+  			<tx:method name="update*" propagation="REQUIRED"/> <!-- //这些操作会无效 -->
+   			<tx:method name="delete*" propagation="REQUIRED"/> 
         </tx:attributes>  
     </tx:advice>  
 </beans>

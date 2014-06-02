@@ -17,9 +17,7 @@ import cn.com.school.eat.code.service.UserService;
 @Component("userAction")  
 @Scope("prototype")  
 public class UserAction extends BaseAction {  
-  
     private static final long serialVersionUID = 1L;  
-  
     private String user_name;
 	private String password;
 	private String mobile;
@@ -138,6 +136,7 @@ public class UserAction extends BaseAction {
 	}
     
     public String userLogin() throws Exception {
+    	System.out.println(mobile+"***********************");
     	responseJson = new HashMap<>();
     	User user = userService.loginJudge(mobile, password);
     	if(null == user){
@@ -157,7 +156,7 @@ public class UserAction extends BaseAction {
     	if(true == isMobileExist)
     		responseJson.put("result", "failed");
     	else {
-    		responseJson.put("result", "success");
+    		//responseJson.put("result", "success");
     		int[] array = {0,1,2,3,4,5,6,7,8,9};
     		Random rand = new Random();
     		for (int i = 10; i > 1; i--) {
@@ -171,7 +170,7 @@ public class UserAction extends BaseAction {
     		    result = result * 10 + array[i];
     		this.myCaptcha = String.valueOf(result);
     		this.timeLimit = new Date().getTime();
-    		responseJson.put("captcha", result);
+    		responseJson.put("result", result);
     		responseJson.put("timeLimit", timeLimit);
     	}
     	return SUCCESS;
@@ -179,7 +178,7 @@ public class UserAction extends BaseAction {
     
     public String registerStep2() throws Exception {
     	responseJson = new HashMap<>();
-    	userService.register(mobile, password);
+    	userService.register(mobile);
     	responseJson.put("result", "success");
     	return SUCCESS;
     }
