@@ -79,15 +79,20 @@ public class OtherDaoImpl implements OtherDao {
 
 	@Override
 	public Dish Zhai(String user_id) {
-		String hql1 = "select binding from user where user_id = ? ";
-		List<String> list1 = hibernateTemplate.find(hql1,
+		System.out.println(user_id);
+		String hql1 = "from User where user_id = ? ";
+		List<User> users = hibernateTemplate.find(hql1,
 				new Object[] { user_id });
-		String binding = list1.get(0);
+		System.out.println(users.size());
+		User user = users.get(0);
+		System.out.println(user);
+		String binding = user.getBinding();
 		String hql2 = "from Dish where dish_id = ? ";
 		List<Dish> list2 = hibernateTemplate.find(hql2,
 				new Object[] { binding });
 		return list2.get(0);
 	}
+
 
 	@Override
 	public List<Address> QueryAddress(String owner_id) {

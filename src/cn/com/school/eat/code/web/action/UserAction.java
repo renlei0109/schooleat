@@ -7,8 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Component;
 import com.google.gson.Gson;
 
@@ -27,7 +30,15 @@ public class UserAction extends BaseAction {
 	private String mobile;
 	private String captcha;
 	private Map<String, Object> responseJson;
+	private HibernateTemplate hibernateTemplate;
 	
+	public HibernateTemplate getHibernateTemplate() {
+		return hibernateTemplate;
+	}
+	@Resource
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
+	}
 	@Autowired
 	private UserService userService;
 
@@ -176,7 +187,9 @@ public class UserAction extends BaseAction {
     		this.timeLimit = new Date().getTime();
     		responseJson.put("result", result);
     		responseJson.put("timeLimit", timeLimit);
+    		System.out.println(mobile+"*********************");
     		new SendMsg_webchinese().sendMsg(mobile, result);//将验证码发送到手机
+    		System.out.println("******************");
     	}
     	return SUCCESS;
     }
@@ -184,8 +197,9 @@ public class UserAction extends BaseAction {
     public String registerStep2() throws Exception {
     	responseJson = new HashMap<>();
     	userService.register(mobile);
+    	User user = (User) hibernateTemplate.find("from User u where u.mobile = ?",new Object[]{mobile}).get(0);
     	responseJson.put("result", "success");
-    	responseJson.put("user_id", user_id);
+    	responseJson.put("user_id", user.getUser_id());
     	return SUCCESS;
     }
     

@@ -62,8 +62,11 @@ public class ResturantAction extends ActionSupport{
 	
 	public String getResturantByMonthSell(){
 		resturants = resturantService.getResturantByMonthSell(longitude, latitude);
+		distances = new ResturantUtil().getDistance(longitude, latitude, resturants);
+		responseJson = new HashMap<String, Object>();
 		if(resturants!=null){
 			responseJson.put("result", gson.toJson(resturants));
+			responseJson.put("distance", gson.toJson(distances));
 			return SUCCESS;
 		}
 		responseJson.put("result", "failed");
@@ -75,6 +78,7 @@ public class ResturantAction extends ActionSupport{
 	public String getResturantByMoney(){
 		resturants = resturantService.getResturantByMoney(longitude, latitude);
 		distances = new ResturantUtil().getDistance(longitude, latitude, resturants);
+		responseJson = new HashMap<String, Object>();
 		if(resturants!=null){
 			responseJson.put("result", gson.toJson(resturants));
 			responseJson.put("distance", distances);
@@ -88,6 +92,7 @@ public class ResturantAction extends ActionSupport{
 	public String getResturantByDistance(){
 		resturants = resturantService.getResturantByDistance(longitude, latitude);
 		distances = new ResturantUtil().getDistance(longitude, latitude, resturants);
+		responseJson = new HashMap<String, Object>();
 		if(resturants!=null){
 			responseJson.put("result", gson.toJson(resturants));
 			responseJson.put("distance", distances);
@@ -100,6 +105,7 @@ public class ResturantAction extends ActionSupport{
 	public String getResturantByBeginMoney(){
 		resturants = resturantService.getResturantByMoney(longitude, latitude);
 		distances = new ResturantUtil().getDistance(longitude, latitude, resturants);
+		responseJson = new HashMap<String, Object>();
 			if(resturants!=null){
 				
 				responseJson.put("result", gson.toJson(resturants));
@@ -116,6 +122,8 @@ public class ResturantAction extends ActionSupport{
 		collection.setId(resturant_id);
 		collection.setType(0);
 		hibernateTemplate.save(collection);
+		hibernateTemplate.flush();
+		responseJson.put("result", "success");
 		return SUCCESS;
 	}
 	

@@ -1,0 +1,54 @@
+Java version: 1.7.0_04
+Java vendor: Oracle Corporation
+Java class path: F:\校园周边项目\git\schooleat\build\classes;F:\Program Files (x86)\tomcat\lib\annotations-api.jar;F:\Program Files (x86)\tomcat\lib\catalina-ant.jar;F:\Program Files (x86)\tomcat\lib\catalina-ha.jar;F:\Program Files (x86)\tomcat\lib\catalina-tribes.jar;F:\Program Files (x86)\tomcat\lib\catalina.jar;F:\Program Files (x86)\tomcat\lib\ecj-3.7.2.jar;F:\Program Files (x86)\tomcat\lib\el-api.jar;F:\Program Files (x86)\tomcat\lib\jasper-el.jar;F:\Program Files (x86)\tomcat\lib\jasper.jar;F:\Program Files (x86)\tomcat\lib\jsp-api.jar;F:\Program Files (x86)\tomcat\lib\servlet-api.jar;F:\Program Files (x86)\tomcat\lib\tomcat-api.jar;F:\Program Files (x86)\tomcat\lib\tomcat-coyote.jar;F:\Program Files (x86)\tomcat\lib\tomcat-dbcp.jar;F:\Program Files (x86)\tomcat\lib\tomcat-i18n-es.jar;F:\Program Files (x86)\tomcat\lib\tomcat-i18n-fr.jar;F:\Program Files (x86)\tomcat\lib\tomcat-i18n-ja.jar;F:\Program Files (x86)\tomcat\lib\tomcat-jdbc.jar;F:\Program Files (x86)\tomcat\lib\tomcat-util.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\antlr-2.7.2.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\aopalliance-1.0.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\asm.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\cglib-2.1.3.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-codec-1.4.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-collections-3.1.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-dbcp-1.4.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-fileupload-1.3.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-httpclient-3.1.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-io-2.0.1.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-lang-2.4.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-lang3-3.1.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-logging-1.1.1.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-logging-1.1.3.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\commons-pool-1.6.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\dom4j-1.6.1.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\freemarker-2.3.19.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\gson-2.1.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\hibernate-annotations.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\hibernate-commons-annotations.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\hibernate-entitymanager.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\hibernate-jpa-2.0-api-1.0.1.Final.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\hibernate3.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\javassist-3.11.0.GA.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\jstl-1.2.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\jta-1.1.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\log4j-1.2.17.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\mysql-connector-java-5.1.7-bin.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\ognl-3.0.6.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\slf4j-api-1.5.8.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\slf4j-log4j12-1.5.8.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-aop-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-aspects-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-beans-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-context-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-context-support-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-core-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-expression-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-jdbc-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-orm-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-tx-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\spring-web-3.2.5.RELEASE.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\struts2-core-2.3.15.3.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\struts2-json-plugin-2.3.15.3.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\struts2-spring-plugin-2.3.15.3.jar;F:\校园周边项目\git\schooleat\WebContent\WEB-INF\lib\xwork-core-2.3.15.3.jar
+Operating system name: Windows 7
+Operating system architecture: amd64
+Operating system version: 6.1
+SUN 1.7: SUN (DSA key/parameter generation; DSA signing; SHA-1, MD5 digests; SecureRandom; X.509 certificates; JKS keystore; PKIX CertPathValidator; PKIX CertPathBuilder; LDAP, Collection CertStores, JavaPolicy Policy; JavaLoginConfig Configuration)
+SunRsaSign 1.7: Sun RSA signature provider
+SunEC 1.7: Sun Elliptic Curve provider (EC, ECDSA, ECDH)
+SunJSSE 1.7: Sun JSSE provider(PKCS12, SunX509 key/trust factories, SSLv3, TLSv1)
+SunJCE 1.7: SunJCE Provider (implements RSA, DES, Triple DES, AES, Blowfish, ARCFOUR, RC2, PBE, Diffie-Hellman, HMAC)
+SunJGSS 1.7: Sun (Kerberos v5, SPNEGO)
+SunSASL 1.7: Sun SASL provider(implements client mechanisms for: DIGEST-MD5, GSSAPI, EXTERNAL, PLAIN, CRAM-MD5, NTLM; server mechanisms for: DIGEST-MD5, GSSAPI, CRAM-MD5, NTLM)
+XMLDSig 1.0: XMLDSig (DOM XMLSignatureFactory; DOM KeyInfoFactory)
+SunPCSC 1.7: Sun PC/SC provider
+SunMSCAPI 1.7: Sun's Microsoft Crypto API provider
+Set parameter http.useragent = Jakarta Commons-HttpClient/3.1
+Set parameter http.protocol.version = HTTP/1.1
+Set parameter http.connection-manager.class = class org.apache.commons.httpclient.SimpleHttpConnectionManager
+Set parameter http.protocol.cookie-policy = default
+Set parameter http.protocol.element-charset = US-ASCII
+Set parameter http.protocol.content-charset = ISO-8859-1
+Set parameter http.method.retry-handler = org.apache.commons.httpclient.DefaultHttpMethodRetryHandler@215750e4
+Set parameter http.dateparser.patterns = [EEE, dd MMM yyyy HH:mm:ss zzz, EEEE, dd-MMM-yy HH:mm:ss zzz, EEE MMM d HH:mm:ss yyyy, EEE, dd-MMM-yyyy HH:mm:ss z, EEE, dd-MMM-yyyy HH-mm-ss z, EEE, dd MMM yy HH:mm:ss z, EEE dd-MMM-yyyy HH:mm:ss z, EEE dd MMM yyyy HH:mm:ss z, EEE dd-MMM-yyyy HH-mm-ss z, EEE dd-MMM-yy HH:mm:ss z, EEE dd MMM yy HH:mm:ss z, EEE,dd-MMM-yy HH:mm:ss z, EEE,dd-MMM-yyyy HH:mm:ss z, EEE, dd-MM-yyyy HH:mm:ss z]
+Open connection to gbk.sms.webchinese.cn:80
+>> "POST / HTTP/1.1[\r][\n]"
+Adding Host request header
+>> "Content-Type: application/x-www-form-urlencoded;charset=gbk[\r][\n]"
+>> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+>> "Host: gbk.sms.webchinese.cn[\r][\n]"
+>> "Content-Length: 177[\r][\n]"
+>> "[\r][\n]"
+>> "Uid=%D0%C5%B7%E7%C8%ED%BC%FE&Key=b6bb776672f6549dd2ae&smsMob=15524878489&smsText=%BB%B6%D3%AD%D7%A2%B2%E1%A1%BE%BE%DE%B6%F6%A1%BF%A3%AC%C4%FA%B5%C4%D1%E9%D6%A4%C2%EB%CA%C7787987"
+Request body sent
+<< "HTTP/1.1 200 OK[\r][\n]"
+<< "HTTP/1.1 200 OK[\r][\n]"
+<< "Date: Mon, 02 Jun 2014 12:01:59 GMT[\r][\n]"
+<< "Server: Microsoft-IIS/6.0[\r][\n]"
+<< "X-Powered-By: ASP.NET[\r][\n]"
+<< "Content-Length: 1[\r][\n]"
+<< "Content-Type: text/html[\r][\n]"
+<< "Expires: Sun, 01 Jun 2014 12:01:58 GMT[\r][\n]"
+<< "Set-Cookie: CHNET=Temp%5Fusername=2014622015954718; expires=Sun, 26-Feb-2017 12:01:58 GMT; path=/[\r][\n]"
+<< "Set-Cookie: ASPSESSIONIDQSSRATCS=CLKJMHOBPDALEPJKIIMGNAIK; path=/[\r][\n]"
+<< "Cache-control: no-cache[\r][\n]"
+<< "[\r][\n]"
+Cookie accepted: "$Version=0; CHNET=Temp%5Fusername=2014622015954718; $Path=/"
+Cookie accepted: "$Version=0; ASPSESSIONIDQSSRATCS=CLKJMHOBPDALEPJKIIMGNAIK; $Path=/"
+Buffering response body
+<< "1"
+Resorting to protocol version default close connection policy
+Should NOT close connection, using HTTP/1.1
+Releasing connection back to connection manager.
+Default charset used: ISO-8859-1

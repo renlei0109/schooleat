@@ -43,7 +43,7 @@ public void sendMsg(String mobile,int num) throws Exception{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-		System.out.println(result);
+		System.out.println(result+"**************");
 		
 		
 		post.releaseConnection();

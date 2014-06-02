@@ -154,7 +154,17 @@
         </action>
         
         <action name="GetResturantByDistance" class="resturantAction" method="getResturantByDistance">
-              <result name="success" type="json">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        <action name="GetResturantByBeginMoney" class="resturantAction" method="getResturantByBeginMoney"> 
+        	<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        <action name="CollectResturantAction" class ="resturantAction" method="collectResturant">
+            <result name="success" type="json">
 				<param name="root">responseJson</param>
 			</result>
         </action>
