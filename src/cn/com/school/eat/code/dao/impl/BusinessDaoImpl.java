@@ -13,8 +13,8 @@ import cn.com.school.eat.code.dao.BusinessDao;
 import cn.com.school.eat.code.entity.Address;
 import cn.com.school.eat.code.entity.Business;
 import cn.com.school.eat.code.entity.Dish;
-import cn.com.school.eat.code.entity.Order;
 import cn.com.school.eat.code.entity.Order_Dish;
+import cn.com.school.eat.code.entity.Order_Main;
 import cn.com.school.eat.code.entity.Resturant;
 import cn.com.school.eat.code.entity.User;
 
@@ -74,8 +74,8 @@ public class BusinessDaoImpl implements BusinessDao{
 		String resturant_id = business.getResturant_id();
 		String hql2 = "from Order where resturant_id = ? and status = '0'";
 		
-		List<Order> orders = hibernateTemplate.find(hql2, new Object[]{resturant_id});
-		for(Order order : orders){
+		List<Order_Main> orders = hibernateTemplate.find(hql2, new Object[]{resturant_id});
+		for(Order_Main order : orders){
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("order_id", order.getOrder_id());
 			map.put("order_time", order.getOrder_time());
@@ -101,8 +101,8 @@ public class BusinessDaoImpl implements BusinessDao{
 		String resturant_id = business.getResturant_id();
 		String hql2 = "from Order where resturant_id = ? and status = '1'";
 		
-		List<Order> orders = hibernateTemplate.find(hql2, new Object[]{resturant_id});
-		for(Order order : orders){
+		List<Order_Main> orders = hibernateTemplate.find(hql2, new Object[]{resturant_id});
+		for(Order_Main order : orders){
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("order_id", order.getOrder_id());
 			map.put("order_time", order.getOrder_time());
@@ -122,7 +122,7 @@ public class BusinessDaoImpl implements BusinessDao{
 	public void completeOrder(String order_id) {
 		// TODO Auto-generated method stub
 		String hql = "from Order where oder_id = ?";
-		Order order = (Order) hibernateTemplate.find(hql, new Object[]{order_id});
+		Order_Main order = (Order_Main) hibernateTemplate.find(hql, new Object[]{order_id});
 		order.setStatus("1");
 		hibernateTemplate.update(order);
 		hibernateTemplate.flush();

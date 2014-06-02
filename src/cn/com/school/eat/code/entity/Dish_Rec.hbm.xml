@@ -26,5 +26,8 @@
         <property name="img_url" type="java.lang.String">
             <column name="IMG_URL" />
         </property>
+        <property name="resturant_name" type="java.lang.String">
+            <column name="RESTURANT_NAME" />
+        </property>
     </class>
 </hibernate-mapping>

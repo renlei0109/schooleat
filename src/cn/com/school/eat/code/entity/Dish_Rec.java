@@ -1,7 +1,13 @@
 package cn.com.school.eat.code.entity;
 
-public class Dish_Rec {
+import java.io.Serializable;
 
+public class Dish_Rec implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String dish_id;
 	private String resturant_id;
 	private String dish_name;
@@ -9,6 +15,8 @@ public class Dish_Rec {
 	private double sale_price;
 	private int sales;
 	private String img_url;
+
+	private String resturant_name;
 
 	public Dish_Rec() {
 
@@ -70,6 +78,12 @@ public class Dish_Rec {
 		this.img_url = img_url;
 	}
 
-	
+	public String getResturant_name() {
+		return resturant_name;
+	}
+
+	public void setResturant_name(String resturant_name) {
+		this.resturant_name = resturant_name;
+	}
 
 }

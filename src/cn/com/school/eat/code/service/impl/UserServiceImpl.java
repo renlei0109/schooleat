@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cn.com.school.eat.code.dao.UserDao;
+import cn.com.school.eat.code.entity.ShowDishedCollection;
+import cn.com.school.eat.code.entity.ShowResturantCollection;
 import cn.com.school.eat.code.entity.User;
 import cn.com.school.eat.code.service.UserService;
 
@@ -42,13 +44,11 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		userDao.addNewUser(mobile);
 	}
-
 	@Override
 	public boolean cancleColl(String user_id, String id, String type) {
 		// TODO Auto-generated method stub
 		return userDao.cancleCollect(user_id, id, type);
 	}
-
 	@Override
 	public boolean addColl(String user_id, String id, String type) {
 		// TODO Auto-generated method stub
@@ -56,13 +56,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<Object> getDishesCollection(String user_id) {
+	public List<ShowDishedCollection> getDishesCollection(String user_id) {
 		// TODO Auto-generated method stub
 		return userDao.showDishedCollection(user_id);
 	}
 
 	@Override
-	public List<Object> getResturantCollection(String user_id) {
+	public List<ShowResturantCollection> getResturantCollection(String user_id) {
 		// TODO Auto-generated method stub
 		return userDao.showResturantCollection(user_id);
 	}
@@ -72,7 +72,6 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userDao.dishBinding(user_id, dish_id);
 	}
-
 	@Override
 	public void changePassword(String user_id, String oldpassword, String newpassword) {
 		// TODO Auto-generated method stub

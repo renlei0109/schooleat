@@ -35,8 +35,8 @@ public class OtherServiceImpl implements OtherService {
 	}
 
 	@Override
-	public List<Dish_Rec> Home_IMG() {
-		List<Dish_Rec> result = otherDao.Home_IMG();
+	public List<Dish_Rec> Home_IMG(int page) {
+		List<Dish_Rec> result = otherDao.Home_IMG(page);
 		return result;
 	}
 

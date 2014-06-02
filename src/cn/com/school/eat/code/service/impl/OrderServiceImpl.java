@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import cn.com.school.eat.code.dao.OrderDao;
 import cn.com.school.eat.code.entity.Address;
-import cn.com.school.eat.code.entity.Order;
+import cn.com.school.eat.code.entity.OrderReturn;
 import cn.com.school.eat.code.service.OrderService;
 
 /**
@@ -36,7 +36,7 @@ public class OrderServiceImpl implements OrderService{
 	 * @see cn.com.school.eat.code.service.OrderService#getOrders(java.lang.String)
 	 */
 	@Override
-	public List<Order> getOrders(String user_id) {
+	public List<OrderReturn> getOrders(String user_id) {
 		
 		return orderDao.findOrders(user_id);
 	}

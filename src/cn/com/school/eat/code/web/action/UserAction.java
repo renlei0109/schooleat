@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import com.google.gson.Gson;
+
+import cn.com.school.eat.code.entity.ShowDishedCollection;
+import cn.com.school.eat.code.entity.ShowResturantCollection;
 import cn.com.school.eat.code.entity.User;
 import cn.com.school.eat.code.service.UserService;
   
@@ -184,14 +187,14 @@ public class UserAction extends BaseAction {
     }
     
     public String cancleCollect() throws Exception {
-    	responseJson = new HashMap<>();
-    	boolean result = userService.cancleColl(user_id, id, type);
-    	if(result == true)
-    		responseJson.put("result", "success");
-    	else
-    		responseJson.put("result", "failed");
-    	return SUCCESS;
-    }
+		responseJson = new HashMap<>();
+		boolean result = userService.cancleColl(user_id, id, type);
+		if (result == true)
+			responseJson.put("result", "success");
+		else
+			responseJson.put("result", "failed");
+		return SUCCESS;
+	}
     
     public String addCollect() throws Exception {
     	responseJson = new HashMap<>();
@@ -202,30 +205,35 @@ public class UserAction extends BaseAction {
     		responseJson.put("result", "failed");
     	return SUCCESS;
     }
-    
     public String showCollect() throws Exception {
-    	responseJson = new HashMap<>();
-    	List<Object> list = new ArrayList<>();
-    	if(type.equals("1"))
-    		list = userService.getDishesCollection(user_id);
-    	else
-    		list = userService.getResturantCollection(user_id);
-    	Gson gson = new Gson();
-		String result = gson.toJson(list);
-		responseJson.put("result", result);
+		responseJson = new HashMap<>();
+		List<ShowDishedCollection> list = null;
+		List<ShowResturantCollection> list2 = null;
+		if (type.equals("1")) {
+			list = userService.getDishesCollection(user_id);
+			Gson gson = new Gson();
+			String result = gson.toJson(list);
+			responseJson.put("result", result);
+			return SUCCESS;
+		} else {
+			list2 = userService.getResturantCollection(user_id);
+			Gson gson = new Gson();
+			String result = gson.toJson(list2);
+			responseJson.put("result", result);
+			return SUCCESS;
+		}
+
+	}
+
+	public String dishBinding() throws Exception {
+		responseJson = new HashMap<>();
+		boolean result = userService.dishBinding(user_id, dish_id);
+		if (result == true)
+			responseJson.put("result", "success");
+		else
+			responseJson.put("result", "failed");
 		return SUCCESS;
-    }
-    
-    public String dishBinding() throws Exception {
-    	responseJson = new HashMap<>();
-    	boolean result = userService.dishBinding(user_id, dish_id);
-    	if(result == true)
-    		responseJson.put("result", "success");
-    	else
-    		responseJson.put("result", "failed");
-    	return SUCCESS;
-    }
-    
+	}
     public String passwordChange() throws Exception {
     	responseJson = new HashMap<>();
     	userService.changePassword(user_id, oldpassword, newpassword);

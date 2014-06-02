@@ -45,7 +45,7 @@
                 <value>cn/com/school/eat/code/entity/Collection.hbm.xml</value>     
                 <value>cn/com/school/eat/code/entity/Dish.hbm.xml</value>
                 <value>cn/com/school/eat/code/entity/Dish_Rec.hbm.xml</value>
-                <value>cn/com/school/eat/code/entity/Order.hbm.xml</value>
+                <value>cn/com/school/eat/code/entity/Order_Main.hbm.xml</value>
                 <value>cn/com/school/eat/code/entity/Order_Dish.hbm.xml</value>
                 <value>cn/com/school/eat/code/entity/Resturant.hbm.xml</value>
                 <value>cn/com/school/eat/code/entity/Resturant_Tag.hbm.xml</value>

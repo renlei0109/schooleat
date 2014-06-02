@@ -1,10 +1,15 @@
 package cn.com.school.eat.code.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
-public class Order {
+public class Order_Main implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String order_id;
 	private Date order_time;
 	private String user_id;
@@ -13,7 +18,7 @@ public class Order {
 	private String resturant_id;
 	private Set<Order_Dish> order_Dishs;
 
-	public Order() {
+	public Order_Main() {
 
 	}
 	

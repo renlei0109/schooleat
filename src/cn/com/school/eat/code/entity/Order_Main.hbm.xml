@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2014-5-28 23:02:45 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-	<class name="cn.com.school.eat.code.entity.Order" table="ORDER">
+	<class name="cn.com.school.eat.code.entity.Order_Main" table="ORDER_MAIN">
 		<id name="order_id" type="java.lang.String">
 			<column name="ORDER_ID" />
 			<generator class="uuid" />

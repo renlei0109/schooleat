@@ -10,7 +10,7 @@ public interface OtherService {
 
 	public Dish Shake();
 
-	public List<Dish_Rec> Home_IMG();
+	public List<Dish_Rec> Home_IMG(int page);
 
 	public Dish Zhai(String user_id);
 

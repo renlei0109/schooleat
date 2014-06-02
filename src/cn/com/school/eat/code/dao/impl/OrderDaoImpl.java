@@ -3,14 +3,22 @@
  */
 package cn.com.school.eat.code.dao.impl;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Vector;
 
 import javax.annotation.Resource;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
@@ -18,8 +26,9 @@ import com.sun.org.apache.bcel.internal.generic.NEW;
 
 import cn.com.school.eat.code.dao.OrderDao;
 import cn.com.school.eat.code.entity.Address;
-import cn.com.school.eat.code.entity.Order;
+import cn.com.school.eat.code.entity.OrderReturn;
 import cn.com.school.eat.code.entity.Order_Dish;
+import cn.com.school.eat.code.entity.Order_Main;
 
 /**
  * @author renlei 
@@ -29,7 +38,15 @@ import cn.com.school.eat.code.entity.Order_Dish;
 @Component("orderDao")
 public class OrderDaoImpl implements OrderDao{
 	private HibernateTemplate hibernateTemplate;
+	private SessionFactory sessionFactory;
 	
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+	@Resource
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
 	public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
 	}
@@ -41,14 +58,51 @@ public class OrderDaoImpl implements OrderDao{
 	/* (non-Javadoc)
 	 * @see cn.com.school.eat.code.dao.OrderDao#findOrders(java.lang.String)
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
-	public List<Order> findOrders(String user_id) {
-		String hql = "from Order o where o.user_id = ?";
-		List<Order>orders = hibernateTemplate.find(hql,new Object[]{user_id});
-		if(null==orders){
-			return null;
+	public List<OrderReturn> findOrders(String user_id) {
+		String hql = "select o.order_id,o.order_time,o.user_id, o.total_price,d.dish_id,d.dish_name,d.img_url,r.resturant_name from order_main o ,order_dish od,dish d,resturant r where o.order_id=od.order_id and od.dish_id=d.dish_id and d.resturant_id = r.resturant_id and user_id=:user_id ";
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		List<?> list = session.createSQLQuery(hql)
+				.setString("user_id", user_id).list();
+		transaction.commit();
+
+		@SuppressWarnings("rawtypes")
+		List enlist = new Vector();
+		enlist = list;
+		List<OrderReturn> result = new ArrayList<OrderReturn>();
+
+		for (Object obj : enlist) {
+			OrderReturn or = new OrderReturn();
+			Map<String, String> map = new HashMap<>();
+			Object[] res = (Object[]) obj;
+			or.setOrder_id(res[0].toString());
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			Date date = null;
+			try {
+
+				date = format.parse(res[1].toString());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			or.setOrder_time(date);
+			or.setUser_id(res[2].toString());
+			or.setTotal_price(res[3].toString());
+			List<Map<String, String>> list2 = new ArrayList<>();
+			for (int i = 0; i < res.length; i++) {
+				map.put("dish_id", res[4].toString());
+				map.put("dish_name", res[5].toString());
+				map.put("img_url", res[6].toString());
+				map.put("resturant_name", res[7].toString());
+				list2.add(map);
+			}
+			or.setList(list2);
+			result.add(or);
 		}
-		return orders;
+		return result;
+
 	}
 
 	/* (non-Javadoc)
@@ -85,7 +139,7 @@ public class OrderDaoImpl implements OrderDao{
 	@Override
 	public String saveOrder(String user_id, String resturant_id,
 			List<Map<String, Object>> maps, double total_price) {
-			Order order = new Order();
+			Order_Main order = new Order_Main();
 			order.setUser_id(user_id);
 			order.setResturant_id(resturant_id);
 			order.setTotal_price(total_price);

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import cn.com.school.eat.code.entity.Address;
-import cn.com.school.eat.code.entity.Order;
+import cn.com.school.eat.code.entity.OrderReturn;
 
 
 /**
@@ -24,7 +24,7 @@ public interface OrderDao {
 		 * 成功返回一个list
 		 * 失败返回"failed"
 		 */
-		public List<Order> findOrders(String user_id);
+		public List<OrderReturn> findOrders(String user_id);
 		
 		
 		/**

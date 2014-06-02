@@ -3,7 +3,9 @@ package cn.com.school.eat.code.web.action;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import cn.com.school.eat.code.entity.*;
+
 import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Scope;
@@ -28,6 +30,16 @@ public class OtherAction extends BaseAction {
 	private String owner_id;
 	private String address_id;
 	private String content;
+	private String page;
+
+	public String getPage() {
+		return page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+	}
+
 	private OtherService otherService;
 
 	public Map<String, Object> getResponseJson() {
@@ -105,10 +117,11 @@ public class OtherAction extends BaseAction {
 	}
 
 	public String Home_IMGAction() throws Exception {
+		int i = (int) Integer.parseInt(page);
 		responseJson = new HashMap<String, Object>();
 		List<Dish_Rec> list = null;
 		try {
-			list = otherService.Home_IMG();
+			list = otherService.Home_IMG(i);
 		} catch (Exception e) {
 			responseJson.put("result", "failed");
 			e.printStackTrace();

@@ -2,6 +2,8 @@ package cn.com.school.eat.code.dao;
 
 import java.util.List;
 
+import cn.com.school.eat.code.entity.ShowDishedCollection;
+import cn.com.school.eat.code.entity.ShowResturantCollection;
 import cn.com.school.eat.code.entity.User;
 
 public interface UserDao {
@@ -16,11 +18,12 @@ public interface UserDao {
 
 	public boolean addCollect(String user_id, String id, String type);
 
-	public List<Object> showDishedCollection(String user_id);
+	public List<ShowDishedCollection> showDishedCollection(String user_id);
 
-	public List<Object> showResturantCollection(String user_id);
+	public List<ShowResturantCollection> showResturantCollection(String user_id);
 
 	public boolean dishBinding(String user_id, String dish_id);
+
 
 	public void changePassword(String user_id, String oldpassword, String newpassword);
 

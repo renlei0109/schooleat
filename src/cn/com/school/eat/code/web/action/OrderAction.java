@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 import com.google.gson.Gson;
 
 import cn.com.school.eat.code.entity.Address;
-import cn.com.school.eat.code.entity.Order;
+import cn.com.school.eat.code.entity.OrderReturn;
 import cn.com.school.eat.code.service.OrderService;
 
 /**
@@ -86,23 +86,18 @@ public class OrderAction extends BaseAction{
 	 * 成功返回一个list
 	 * 失败返回"failed"
 	 */
-	public String QueryOrderAction(){
-		
-		 List<Order> orders;
-		 responsejson = new HashMap<String, Object>();
-		try {
-			orders = orderService.getOrders(user_id);
-			Gson gson = new Gson();
-			responsejson.put("result", gson.toJson(orders));
-			return SUCCESS;
-		} catch (Exception e) {
-			responsejson.put("result", "failed");
-			return SUCCESS;
-			
-		}
-		 
+	public String QueryOrderAction() {
+
+		List<OrderReturn> orders = null;
+		responsejson = new HashMap<String, Object>();
+
+		orders = orderService.getOrders(user_id);
+		Gson gson = new Gson();
+		String result = gson.toJson(orders);
+		System.out.println(result);
+		responsejson.put("result", result);
+		return SUCCESS;
 	}
-	
 	
 	/**
 	 * 根据user_id查询该人的收货地址
