@@ -158,6 +158,94 @@
 				<param name="root">responseJson</param>
 			</result>
         </action>
+        
+        
+        
+      <!--   张明宇businessaction -->
+      	
+        <action name="shopkeeperLogin" class="businessAction" method="shopkeeperLogin">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="changeState" class="businessAction" method="changeState">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="shopkeeperChangePassword" class="businessAction" method="shopkeeperChangePassword">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="getUntreatedOrders" class="businessAction" method="getUntreatedOrders">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="getTreatedOrders" class="businessAction" method="getTreatedOrders">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="completeOrder" class="businessAction" method="completeOrder">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="getOrderDetail" class="businessAction" method="getOrderDetail">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="getDishes" class="businessAction" method="getDishes">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="deleteDish" class="businessAction" method="deleteDish">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="getDishDetail" class="businessAction" method="getDishDetail">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="changeDishInfo" class="businessAction" method="changeDishInfo">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="getShopInfo" class="businessAction" method="changeDishInfo">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="changeShopBaseInfo" class="businessAction" method="changeShopBaseInfo">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
+        
+        <action name="changeShopAddressInfo" class="businessAction" method="changeShopAddressInfo">
+            <result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+        </action>
        
     </package>
           
