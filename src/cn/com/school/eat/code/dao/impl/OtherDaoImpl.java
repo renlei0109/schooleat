@@ -37,15 +37,27 @@ public class OtherDaoImpl implements OtherDao {
 	@Override
 	public Dish Shake() {
 		String hql1 = "select count(*) from Dish";
-		List<Integer> list = hibernateTemplate.find(hql1);
-		int count = list.get(0);
+		List<Object> list = hibernateTemplate.find(hql1);
+		System.out.println(list.get(0)+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		Random random = new Random();
-		int i = random.nextInt(count);
-		int j = count + 1;
-		String hql2 = "from Dish limit ?,?";
-		List<Dish> result = hibernateTemplate.find(hql2, new Object[] { i, j });
+		int num = Integer.valueOf(list.get(0).toString());
+		final int i = random.nextInt(num);
+		final int j = num + 1;
+		List<Dish> result = hibernateTemplate
+				.executeFind(new HibernateCallback() {
+					public Object doInHibernate(Session session)
+							throws HibernateException {
+						Query query = session.createQuery("from Dish");
+						query.setMaxResults(j);
+						query.setFirstResult(i);
+						return query.list();
+					}
+				});
 		return result.get(0);
+		
+		
 	}
+
 
 	@Override
 	public List<Dish_Rec> Home_IMG(int page) {

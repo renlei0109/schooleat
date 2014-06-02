@@ -16,6 +16,7 @@ import cn.com.school.eat.code.entity.ShowDishedCollection;
 import cn.com.school.eat.code.entity.ShowResturantCollection;
 import cn.com.school.eat.code.entity.User;
 import cn.com.school.eat.code.service.UserService;
+import cn.com.school.eat.code.util.user.SendMsg_webchinese;
   
 @Component("userAction")  
 @Scope("prototype")  
@@ -175,6 +176,7 @@ public class UserAction extends BaseAction {
     		this.timeLimit = new Date().getTime();
     		responseJson.put("result", result);
     		responseJson.put("timeLimit", timeLimit);
+    		new SendMsg_webchinese().sendMsg(mobile, result);//将验证码发送到手机
     	}
     	return SUCCESS;
     }
@@ -183,6 +185,7 @@ public class UserAction extends BaseAction {
     	responseJson = new HashMap<>();
     	userService.register(mobile);
     	responseJson.put("result", "success");
+    	responseJson.put("user_id", user_id);
     	return SUCCESS;
     }
     
