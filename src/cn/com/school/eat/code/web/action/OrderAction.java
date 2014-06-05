@@ -9,12 +9,15 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.hibernate.Hibernate;
 import org.springframework.context.annotation.Scope;
+import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
 import com.google.gson.Gson;
 
 import cn.com.school.eat.code.entity.Address;
+import cn.com.school.eat.code.entity.Dish;
 import cn.com.school.eat.code.entity.OrderReturn;
 import cn.com.school.eat.code.service.OrderService;
 
@@ -33,7 +36,15 @@ public class OrderAction extends BaseAction{
 	private double total_price;
 	private List<Map<String , Object>> maps;
 	private Map<String, Object> responsejson;
+	private HibernateTemplate hibernateTemplate;
 	
+	public HibernateTemplate getHibernateTemplate() {
+		return hibernateTemplate;
+	}
+	@Resource
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
+	}
 	public OrderService getOrderService() {
 		return orderService;
 	}
@@ -177,6 +188,24 @@ public class OrderAction extends BaseAction{
 			
 		}
 		 
+	}
+	
+	public String  GetDishsAction(){
+		System.out.println("**********"+resturant_id+"****************");
+		List<Dish>dishs = hibernateTemplate.find("from Dish d where d.resturant_id = ?" ,new Object[]{resturant_id});
+		responsejson = new HashMap<String, Object>();
+		System.out.println("**************"+dishs.get(0).toString()+"***********");
+		Gson gson = new Gson();
+		if(dishs.size()>0)
+			{
+			responsejson.put("result", gson.toJson(dishs));
+			return SUCCESS;
+			}
+		else {
+			responsejson.put("result", "failed");
+			return SUCCESS;
+		}
+		
 	}
 	
 	

@@ -10,6 +10,14 @@ public class Dish {
 	private int sales;
 	private String img_url;
 
+	@Override
+	public String toString() {
+		return "Dish [dish_id=" + dish_id + ", resturant_id=" + resturant_id
+				+ ", dish_name=" + dish_name + ", price=" + price
+				+ ", sale_price=" + sale_price + ", sales=" + sales
+				+ ", img_url=" + img_url + "]";
+	}
+
 	public Dish() {
 
 	}

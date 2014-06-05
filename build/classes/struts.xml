@@ -168,6 +168,11 @@
 				<param name="root">responseJson</param>
 			</result>
         </action>
+         <action name="GetDishsAction" class ="orderAction" method="GetDishsAction">
+            <result name="success" type="json">
+				<param name="root">responsejson</param>
+			</result>
+        </action>
         
         
         

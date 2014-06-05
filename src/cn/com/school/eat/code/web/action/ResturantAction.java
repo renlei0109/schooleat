@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
 import cn.com.school.eat.code.entity.Collection;
+import cn.com.school.eat.code.entity.Dish;
 import cn.com.school.eat.code.entity.Resturant;
 import cn.com.school.eat.code.service.ResturantService;
 import cn.com.school.eat.code.util.resturant.ResturantUtil;
@@ -126,6 +127,9 @@ public class ResturantAction extends ActionSupport{
 		responseJson.put("result", "success");
 		return SUCCESS;
 	}
+	
+	
+
 	
 	
 
